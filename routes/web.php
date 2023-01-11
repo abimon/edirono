@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\viewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,4 @@ Route::get('/contact', function(){
 Route::get('/dashboard', function(){
     return view('dashboard');
 });
-Route::get('/calendar', function(){
-    return view('calendar');
-});
+Route::get('/calendar', [viewsController::class, 'calendar']);

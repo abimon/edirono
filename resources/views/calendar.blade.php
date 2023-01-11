@@ -5,9 +5,9 @@
   <div id='mainContent'>
     <div class="container-fluid">
       <div class="bdrs-3 ov-h bgc-white bd">
-        <div class="bgc-deep-purple-500 ta-c p-30">
-          <h1 class="fw-300 mB-5 lh-1 c-white">{{date('F jS, Y')}}</h1>
-          <h3 class="c-white">{{date('l')}}</h3>
+        <div class="p-3 text-center" style="background-color: #673ab7;">
+          <h1 class="text-white">{{date('F jS, Y')}}</h1>
+          <h3 class="text-white">{{date('l')}}</h3>
           <h5 class="text-warning">{{date('h:i A')}}</h5>
         </div>
         <div class="pos-r">
@@ -139,10 +139,10 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="bd p-15">
-              <h5 class="m-0">Add Event</h5>
+              <h5 class="m-0">Create Event</h5>
             </div>
             <div class="modal-body">
-              <form action="/addEvent" method="post">
+              <form action="/createEvent" method="post">
                 @csrf
                 <div class="form-group">
                   <label class="fw-500">Event title</label>
