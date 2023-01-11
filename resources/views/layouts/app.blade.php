@@ -24,14 +24,6 @@
 			text-decoration: none;
 		}
 
-		.navbar-nav ul li {
-			font-family: "Open Sans", arial, sans-serif;
-			padding: 0;
-			list-style: none;
-			display: inline;
-			font-size: 18px;
-			line-height: 32px;
-		}
 	</style>
 </head>
 
@@ -41,13 +33,13 @@
 
 	<div >
 		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-			<div class="container-fluid">
+			<div class="container">
 				<a class="navbar-brand" href="/"><img src="{{asset('storage/images/backgrounds/LogoRono.png')}}" width="60" height="60"></a>
 				<div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</div>
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mb-2 mb-lg-0" style='font-family: "Times New Roman", Times, serif;  font-size: 18px; line-height: 32px; '>
+					<ul class="navbar-nav mb-2" style='font-family: "Times New Roman", Times, serif;  font-size: 18px; line-height: 32px; '>
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="/knits">KNITS</a>
 						</li>
@@ -71,11 +63,11 @@
 		<div class="container">
 			<footer id="fh5co-footer" role="contentinfo">
 				<div class="row">
-					<div class="col-md-3 fh5co-widget">
+					<div class="col-md-4 fh5co-widget">
 						<h4>About Us</h4>
-						<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
+						<p>We are a focused and client prioritized organization. To us your request is a command we but have to obey. Daily, we are determined to make the best out of our efforts and meet the client's utmost need</p>
 					</div>
-					<div class="col-md-3 col-md-push-1">
+					<div class="col-md-4 col-md-push-1">
 						<h4>Latest Projects</h4>
 						<ul class="fh5co-footer-links">
 							<li><a href="#">JBC Stadium</a></li>
@@ -84,25 +76,12 @@
 							<li><a href="#">London Stadium</a></li>
 						</ul>
 					</div>
-
-					<div class="col-md-3 col-md-push-1">
-						<h4>Links</h4>
-						<ul class="fh5co-footer-links">
-							<li><a href="#">Home</a></li>
-							<li><a href="#">Work</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">About us</a></li>
-						</ul>
-					</div>
-
-					<div class="col-md-3">
+					<div class="col-md-4">
 						<h4>Contact Information</h4>
 						<ul class="fh5co-footer-links">
-							<li>198 West 21th Street, <br> Suite 721 New York NY 10016</li>
-							<li><a href="tel://1234567920">+ 1235 2355 98</a></li>
-							<li><a href="mailto:info@yoursite.com">info@yoursite.com</a></li>
-							<li><a href="http://gettemplates.co">gettemplates.co</a></li>
+							<li><i class="icon-whatsapp"></i> <a href="https://wa.me/+254715090098">+254 715 090 098</a></li>
+							<li><i class="icon-phone"></i> <a href="tel://+254715090098">+254 715 090 098</a></li>
+							<li><i class="icon-mail"></i> <a href="mailto:info@ronoarchsandknits.com">info@ronoarchsandknits.com</a></li>
 						</ul>
 					</div>
 
@@ -111,15 +90,16 @@
 				<div class="row copyright">
 					<div class="col-md-12 text-center">
 						<p>
-							<small class="block">&copy; {{date('Y')}}RonoArchs&Knits. All Rights Reserved.</small>
+							<small class="block">&copy; {{date('Y')}} RonoArchs&Knits. All Rights Reserved.</small>
 							<small class="block">Designed by <a href="https://apekinc.top" target="_blank">APEK INC</a></small>
 						</p>
 						<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+							<li><a href=""><i class="icon-twitter"></i></a></li>
+							<li><a href="https://www.facebook.com/edimon.ombati.3/"><i class="icon-facebook"></i></a></li>
+							<li><a href=""><i class="icon-linkedin"></i></a></li>
+							<li><a href="https://github.com/abimon"><i class="icon-github"></i></a></li>
+							<li><a href="https://+254701583807"><i class="icon-whatsapp"></i></a></li>
 						</ul>
 						</p>
 					</div>
