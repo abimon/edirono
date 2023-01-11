@@ -19,60 +19,7 @@ $image7 = asset('storage/images/backgrounds/image7.jpg');
 		</div>
 	</div>
 	
-	<div id="fh5co-hero">
-		<div class="flexslider">
-			<ul class="slides">
-				<li style="background-image: url({{$image1}});">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div>
-							<div class="slider-text">
-								<div class="slider-text-inner">
-									<h1>Best showcase for architecture</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li style="background-image: url({{$image2}});">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div>
-							<div class="slider-text">
-								<div class="slider-text-inner">
-									<h1>Best showcase for architecture</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li style="background-image: url({{$image3}});">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div>
-							<div class="slider-text">
-								<div class="slider-text-inner">
-									<h1>Best showcase for architecture</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<li style="background-image: url({{$image4}});">
-					<div class="overlay"></div>
-					<div class="container-fluid">
-						<div>
-							<div class="slider-text">
-								<div class="slider-text-inner">
-									<h1>Best showcase for architecture</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+	
 	<div id="fh5co-portfolio">
 		<div class="row nopadding">
 			<div class="col-md-6 padding-right">

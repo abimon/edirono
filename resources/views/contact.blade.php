@@ -8,7 +8,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="fh5co-contact">
+		<div>
 			<div class="row">
 				<div class="col-md-4 animate-box">
 					<h3 >Contact Information</h3>
@@ -20,7 +20,7 @@
 					</ul>
 				</div>
 				<div class="col-md-8 animate-box">
-					<div class="form-wrap">
+					<div class="">
 						<div class="row">
 							<div class="col-md-12">
 								<div class="form-group">
