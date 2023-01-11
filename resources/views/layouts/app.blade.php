@@ -39,37 +39,35 @@
 
 	<div class="fh5co-loader"></div>
 
-	<div id="page">
-
+	<div >
 		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="/"><img src="{{asset('storage/images/backgrounds/LogoRono.png')}}" width="60" height="60"></a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent" >
+				</div>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mb-2 mb-lg-0" style='font-family: "Times New Roman", Times, serif;  font-size: 18px; line-height: 32px; '>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Knits</a>
+							<a class="nav-link text-dark" href="/knits">KNITS</a>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								Archs
+							<a class="nav-link text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								ARCHS
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-								<li><a class="dropdown-item" href="#">Another action</a></li>
-								<li>
-									<hr class="dropdown-divider">
-								</li>
-								<li><a class="dropdown-item" href="#">Something else here</a></li>
+								<li><a class="dropdown-item" href="#">Interiors</a></li>
+								<li><a class="dropdown-item" href="#">Landscaping</a></li>
+								<li><a class="dropdown-item" href="#">Structures</a></li>
 							</ul>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+		<div style="min-height:400px;">
 		@yield('content')
+		</div>
 		<div class="container">
 			<footer id="fh5co-footer" role="contentinfo">
 				<div class="row">
