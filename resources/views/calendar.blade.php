@@ -9,21 +9,19 @@
           <h1 class="text-white">{{date('F jS, Y')}}</h1>
           <h3 class="text-white">{{date('l')}}</h3>
           <h5 class="text-warning">{{date('h:i A')}}</h5>
+          <a class="d-flex justify-content-end" href="" data-bs-toggle="modal" data-bs-target="#calendar-edit">
+            <button type="button" class="rounded-circle bg-warning p-3">
+              <i class=" bi bi-plus"></i>
+            </button>
+          </a>
         </div>
         <div class="pos-r">
 
           <ul class="m-0 p-0 mT-20">
-            <li>
-              <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="" data-toggle="modal" data-target="#calendar-edit">
-                <button type="button" class="mT-nv-50 pos-a r-10 t-2 btn cur-p bdrs-50p p-0 w-3r h-3r btn-warning">
-                  <i class=" bi bi-plus "></i>
-                </button>
-              </a>
 
-            </li>
             @foreach($events as $event)
             <li class="bdB peers ai-c jc-sb fxw-nw">
-              <a class="td-n p-20 peers fxw-nw mR-20 peer-greed c-grey-900" href="" data-toggle="modal" data-target="#calendar-details{{$event->id}}">
+              <a class="p-4 text-secondary" href="" data-toggle="modal" data-target="#calendar-details{{$event->id}}">
                 <div class="peer mR-15">
                   <i class="fa fa-fw fa-clock-o c-red-500"></i>
                 </div>
@@ -53,6 +51,7 @@
                 <div class="modal-content">
                   <div class="bd p-15">
                     <h5 class="m-0">{{$event->event_title}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
                     <div class="d-flex justify-content-between">
@@ -106,7 +105,7 @@
 
                       <div class="form-group">
                         <label class="fw-500">Event Description</label>
-                        <textarea class="form-control bdc-grey-200" rows='5' name="event_description" >{{$event->event_description}}</textarea>
+                        <textarea class="form-control bdc-grey-200" rows='5' name="event_description">{{$event->event_description}}</textarea>
                       </div>
                       <div class="text-right">
                         <button class="btn btn-primary cur-p" type="submit">Done</button>
@@ -124,9 +123,9 @@
                   </div>
                   <div class="modal-body">
                     Are you sure to delete this event?
-                      <div class="modal-footer">
+                    <div class="modal-footer">
                       <a href="/deleteEvent/{{$event->id}}"><button class="btn btn-danger cur-p" type="submit">Yes</button></a>
-                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -138,8 +137,9 @@
       <div class="modal fade" id="calendar-edit">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
-            <div class="bd p-15">
-              <h5 class="m-0">Create Event</h5>
+            <div class="modal-header">
+              <h5 class="modal-title">Create Event</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form action="/createEvent" method="post">
