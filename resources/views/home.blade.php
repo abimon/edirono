@@ -50,21 +50,17 @@ $image7 = asset('storage/images/backgrounds/image7.jpg');
 	</div>
 	<div id="fh5co-portfolio">
 		<div class="row nopadding">
-			<div class="col-md-6 padding-right">
-				<div class="row">
-					@foreach($projects as $project)
-					<div class="col-md-12 animate-box">
-						<a href="/projects/{{$project->title}}" class="portfolio-grid">
-							<img src="{{asset('storage/projects/'.$project->file_path)}}" class="img-responsive">
-							<div class="desc">
-								<h3>{{$project->title}} Project</h3>
-								<span>{{$project->project_location}}</span>
-							</div>
-						</a>
+			@foreach($projects as $project)
+			<div class="col-md-6 animate-box">
+				<a href="/projects/{{$project->title}}" class="portfolio-grid">
+					<img src="{{asset('storage/projects/'.$project->file_path)}}" class="img-responsive">
+					<div class="desc">
+						<h3>{{$project->title}} Project</h3>
+						<span>{{$project->project_location}}</span>
 					</div>
-					@endforeach
-				</div>
+				</a>
 			</div>
+			@endforeach
 		</div>
 	</div>
 </div><!-- END container -->

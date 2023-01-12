@@ -34,9 +34,17 @@ $image7 = asset('storage/images/backgrounds/image7.jpg');
                     </div>
                 </div>
             </div>
-
-
-
+            <div class="col-md-12">
+                <div id="fh5co-portfolio">
+                    <div class="row">
+                        @foreach($files as $file)
+                        <div class="col-md-6 animate-box mb-4">
+                            <img src="{{asset('storage/projects/others/'.$file->file_path)}}" style='width:100%;' class="img-responsive">
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div><!-- END container-wrap -->

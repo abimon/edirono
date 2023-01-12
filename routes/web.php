@@ -31,8 +31,14 @@ Route::get('/contact', function(){
 
 Route::get('/projects/{name}', [viewsController::class, 'project']);
 
-Route::get('/calendar', [viewsController::class, 'calendar']);
-Route::get('/dashboard', [viewsController::class, 'dashboard']);
-
-Route::post('/addCategory',[dataController::class, 'addCategory']);
-Route::post('/addProject',[dataController::class, 'createproject']);
+Route::middleware('checkSession')->group(function(){
+    //views
+    Route::get('/calendar', [viewsController::class, 'calendar']);
+    Route::get('/dashboard', [viewsController::class, 'dashboard']);
+    
+    //CRUD
+    Route::post('/addCategory',[dataController::class, 'addCategory']);
+    Route::post('/addProject',[dataController::class, 'createproject']);
+    Route::post('/addFiles',[dataController::class, 'addFiles']);
+    Route::post('/createEvent',[dataController::class, 'createEvent']);
+});

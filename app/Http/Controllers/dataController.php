@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Event;
+use App\Models\File;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,8 @@ class dataController extends Controller
     public function addCategory()
     {
         Category::create([
-            'category'=>request()->category,
-            'subcategory'=>request()->sub_category
+            'category' => request()->category,
+            'subcategory' => request()->sub_category
         ]);
         return redirect()->back();
     }
@@ -37,8 +38,17 @@ class dataController extends Controller
         ]);
         return redirect()->back();
     }
-    function addFiles()
+    public function addFiles(Request $req)
     {
+        foreach ($req->file('files') as $file) {
+            $filename = $file->getClientOriginalName();
+            $file->move('storage/projects/others', $filename);;
+            File::create([
+                'project_id' => request()->project_id,
+                'file_path' => $filename
+            ]);
+        }
+        return redirect()->back();
     }
     public function createEvent()
     {
@@ -47,7 +57,7 @@ class dataController extends Controller
             'event_date' => request()->event_date,
             'event_time' => request()->event_time,
             'event_duration' => request()->event_duration,
-            'event_desc' => request()->event_desc,
+            'event_desc' => request()->event_description,
         ]);
         return redirect()->back();
     }
@@ -56,4 +66,5 @@ class dataController extends Controller
         Event::destroy($id);
         return redirect()->back();
     }
+    
 }

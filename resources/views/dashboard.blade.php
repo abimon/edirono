@@ -118,7 +118,7 @@
                                         <tr>
                                             <th>{{$key+1}}</th>
                                             <td>{{$project->title}}</td>
-                                            <td>{{$project->location}}</td>
+                                            <td>{{$project->project_location}}</td>
                                             <td>More...</td>
                                         </tr>
                                         @endforeach

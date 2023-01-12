@@ -46,9 +46,17 @@
       <li class="nav-item">
         <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#resources">
           <span class="icon-holder">
-            <i class="c-deep-orange-500 bi bi-files mR-10"></i>
+            <i class="c-deep-orange-500 bi bi-building-gear mR-10"></i>
           </span>
           <span class="title">Add Project</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#files">
+          <span class="icon-holder">
+            <i class="c-deep-orange-500 bi bi-files mR-10"></i>
+          </span>
+          <span class="title">Project Photos</span>
         </a>
       </li>
       <li class="nav-item ">
@@ -209,11 +217,56 @@
     </div>
   </div>
 </div>
-<div class="modal fade" id="archs" tabindex="-1" aria-labelledby="knits" aria-hidden="true">
+<div class="modal fade" id="files" tabindex="-1" aria-labelledby="files" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Add Project</h5>
+        <h5 class="modal-title">Add Project Photos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" action="/addFiles" enctype="multipart/form-data">
+        <div class="modal-body text-black">
+          @csrf
+          <div class="mb-3">
+            <select class="form-select" name="project_id">
+              <option selected>Select Project</option>
+              @foreach($projects as $project)
+              <option class="form-control" value="{{$project->id}}">{{$project->title}}</option>
+              @endforeach
+            </select>
+            @error('project')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+          <div class="row mb-3">
+            <label for="file" class="">{{ __('File') }}</label>
+
+            <div class="">
+              <input type="file" multiple accept="image/*" class="form-control @error('file') is-invalid @enderror" name="files[]" required>
+
+              @error('file')
+              <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+              </span>
+              @enderror
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="knits" tabindex="-1" aria-labelledby="knits" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Knitting Project</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form method="POST" action="/uploadresource" enctype="multipart/form-data">
