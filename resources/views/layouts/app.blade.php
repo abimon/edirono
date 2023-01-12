@@ -23,6 +23,9 @@
 		a {
 			text-decoration: none;
 		}
+		a:hover{
+			color:cyan;
+		}
 
 	</style>
 </head>

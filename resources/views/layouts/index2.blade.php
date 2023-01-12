@@ -77,25 +77,27 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="category">Add Project</h5>
+        <h5 class="modal-title" id="category">Add Category</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body text-black">
-        <form action="/addCategory" method="post">
+      <form action="/addCategory" method="post">
+        <div class="modal-body text-black">
+          @csrf
           <select name="category" class="form-control mb-2">
             <option value="">Arch or Knit?</option>
             <option value="Arch">Arch</option>
             <option value="Knit">Knit</option>
           </select>
           <div class="form-floating">
-            <input type="text" name="subcategory" class="form-control mb-2" placeholder=" ">
+            <input type="text" name="sub_category" class="form-control mb-2" placeholder=" ">
             <label for="subcategory">Category</label>
           </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success" >Save</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
@@ -132,15 +134,15 @@
         <h5 class="modal-title">Add Project</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="POST" action="/uploadresource" enctype="multipart/form-data">
+      <form method="POST" action="/addProject" enctype="multipart/form-data">
         <div class="modal-body text-black">
           @csrf
           <div class="mb-3">
-            <select class="form-select" name="category">
+            <select class="form-select" name="category_id">
               <option selected>Select Category</option>
-              <option class="form-control" value="">Interiors</option>
-              <option class="form-control" value="">Landscapes</option>
-              <option class="form-control" value="">Structures</option>
+              @foreach($categories->where('category', 'Arch') as $category)
+              <option class="form-control" value="{{$category->id}}">{{$category->subcategory}}</option>
+              @endforeach
             </select>
             @error('category')
             <span class="invalid-feedback" role="alert">
@@ -160,6 +162,15 @@
           <div class="form-floating mb-3">
             <input type="text" class="form-control" name="location" placeholder=" ">
             <label for="floatingInput">Project Location</label>
+            @error('location')
+            <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+          </div>
+          <div class="form-floating mb-3">
+           <textarea name="description" class="form-control" placeholder=" "></textarea>
+            <label for="floatingInput">Project Description</label>
             @error('location')
             <span class="invalid-feedback" role="alert">
               <strong>{{ $message }}</strong>

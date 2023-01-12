@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\dataController;
 use App\Http\Controllers\viewsController;
+use Facade\FlareClient\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,7 +30,9 @@ Route::get('/single', function(){
 Route::get('/contact', function(){
     return view('contact');
 });
-Route::get('/dashboard', function(){
-    return view('dashboard');
-});
+
 Route::get('/calendar', [viewsController::class, 'calendar']);
+Route::get('/dashboard', [viewsController::class, 'dashboard']);
+
+Route::post('/addCategory',[dataController::class, 'addCategory']);
+Route::post('/addProject',[dataController::class, 'createproject']);

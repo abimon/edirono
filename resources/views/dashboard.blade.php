@@ -108,27 +108,24 @@
                                     <thead>
                                         <tr>
                                             <th class=" bdwT-0">#</th>
-                                            <th class=" bdwT-0">Name</th>
-                                            <th class=" bdwT-0">Institution</th>
-                                            <th class=" bdwT-0">Joining Date</th>
-                                            <th class=" bdwT-0">Status</th>
+                                            <th class=" bdwT-0">Title</th>
+                                            <th class=" bdwT-0">Location</th>
+                                            <th class=" bdwT-0">Details</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($projects as $key=>$project)
                                         <tr>
-                                            <th class=" bdwT-0"></th>
-                                            <td class="fw-600"></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><span class="text-success"></span></td>
+                                            <th>{{$key+1}}</th>
+                                            <td>{{$project->title}}</td>
+                                            <td>{{$project->location}}</td>
+                                            <td>More...</td>
                                         </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                    </div>
-                    <div class="ta-c bdT w-100 p-20">
-                        <a href="#">Check all members</a>
                     </div>
                 </div>
             </div>
