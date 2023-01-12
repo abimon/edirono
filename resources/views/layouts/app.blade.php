@@ -38,11 +38,12 @@
 		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 			<div class="container">
 				<a class="navbar-brand" href="/"><img src="{{asset('storage/images/backgrounds/LogoRono.png')}}" width="60" height="60"></a>
-				<div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<!--
+					<div class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
-				</div>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mb-2" style='font-family: "Times New Roman", Times, serif;  font-size: 18px; line-height: 32px; '>
+				</div>-->
+				<div class="" id="navbarSupportedContent">
+					<ul class="nav nav-pills nav-fill mb-2" style='font-family: cursive;  font-size: 18px; line-height: 32px; '>
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="/knits">KNITS</a>
 						</li>
