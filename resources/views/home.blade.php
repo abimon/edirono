@@ -28,22 +28,22 @@ $image7 = asset('storage/images/backgrounds/image7.jpg');
 			<div class="carousel-item active" data-bs-interval="10000">
 				<img src="{{$image5}}" class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>First slide label</h5>
-					<p>Some representative placeholder content for the first slide.</p>
+					<h5 class="text-white">TV Room</h5>
+					<p class="text-white">The best Place to watch your fevourite TV program or movie.</p>
 				</div>
 			</div>
 			<div class="carousel-item" data-bs-interval="2000">
 				<img src="{{$image6}}" class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>Second slide label</h5>
-					<p>Some representative placeholder content for the second slide.</p>
+					<h5 class="text-white">Sitting Room</h5>
+					<p class="text-white">Rest isn't satisfying unless it is comfortable. Get your sitting room done.</p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="{{$image7}}" class="d-block w-100" alt="...">
 				<div class="carousel-caption d-none d-md-block">
-					<h5>Third slide label</h5>
-					<p>Some representative placeholder content for the third slide.</p>
+					<h5 class="text-white">Dinning Rooms</h5>
+					<p class="text-white">The best places to take your meals with a lot of serenity.</p>
 				</div>
 			</div>
 		</div>
