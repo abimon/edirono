@@ -29,7 +29,13 @@ Route::get('/contact', function(){
     return view('contact');
 });
 
+Route::get('/logout', function(){
+    Auth::logout();
+    return redirect('/');
+});
 Route::get('/projects/{name}', [viewsController::class, 'project']);
+Route::get('/knits', [viewsController::class, 'knits']);
+Route::get('/archs', [viewsController::class, 'archs']);
 
 Route::middleware('checkSession')->group(function(){
     //views

@@ -17,9 +17,9 @@ class checkSession
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!Auth::user()){
-            return redirect('/login');
+        if (Auth::user() && ((Auth()->user()->permissions) == 'Admin')) {
+            return $next($request);
         }
-        return $next($request);
+        return redirect('/login');
     }
 }

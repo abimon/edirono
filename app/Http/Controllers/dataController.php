@@ -18,7 +18,7 @@ class dataController extends Controller
         ]);
         return redirect()->back();
     }
-    public function createproject()
+    public function createproject($category)
     {
         //get just ext
         $extension = request()->file('file')->getClientOriginalExtension();
@@ -28,9 +28,11 @@ class dataController extends Controller
         $file_path = $filename . '_' . time() . '.' . $extension;
         //upload
         request()->file('file')->storeAs('public/projects', $file_path);
+        
         Project::create([
             'title' => request()->title,
-            'category_id' => request()->category_id,
+            'category' => $category,
+            'subcategory'=>request()->subcategory,
             'description' => request()->description,
             'file_path' => $file_path,
             'isOngoing' => request()->isOngoing,

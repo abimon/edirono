@@ -142,14 +142,14 @@
         <h5 class="modal-title">Add Project</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="POST" action="/addProject" enctype="multipart/form-data">
+      <form method="POST" action="/addProject/Archs" enctype="multipart/form-data">
         <div class="modal-body text-black">
           @csrf
           <div class="mb-3">
             <select class="form-select" name="category_id">
               <option selected>Select Category</option>
               @foreach($categories->where('category', 'Arch') as $category)
-              <option class="form-control" value="{{$category->id}}">{{$category->subcategory}}</option>
+              <option class="form-control" value="{{$category->subcategory}}">{{$category->subcategory}}</option>
               @endforeach
             </select>
             @error('category')
@@ -269,15 +269,15 @@
         <h5 class="modal-title">Add Knitting Project</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <form method="POST" action="/uploadresource" enctype="multipart/form-data">
+      <form method="POST" action="/uploadresource/Knits" enctype="multipart/form-data">
         <div class="modal-body text-black">
           @csrf
           <div class="mb-3">
             <select class="form-select" name="category">
               <option selected>Select Category</option>
-              <option class="form-control" value="">Clothing</option>
-              <option class="form-control" value="">Decoration</option>
-              <option class="form-control" value="">Others</option>
+              @foreach($categories->where('category','Knits') as $category)
+              <option class="form-control" value="{{$category->subcategory}}">{{$category->subcategory}}</option>
+              @endforeach
             </select>
             @error('category')
             <span class="invalid-feedback" role="alert">

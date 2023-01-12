@@ -50,4 +50,18 @@ class viewsController extends Controller
         //return $project;
         return view('single', $data);
     }
+    function knits(){
+        $projects=Project::where(['category'=>'Knits'])->get();
+        $data=[
+            'projects'=>$projects,
+        ];
+        return view('projects', $data);
+    }
+    function archs(){
+        $projects=Project::where(['category'=>'Archs'])->get();
+        $data=[
+            'projects'=>$projects,
+        ];
+        return view('projects', $data);
+    }
 }

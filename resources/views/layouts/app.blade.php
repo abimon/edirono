@@ -47,15 +47,8 @@
 						<li class="nav-item">
 							<a class="nav-link text-dark" href="/knits">KNITS</a>
 						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-								ARCHS
-							</a>
-							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item" href="#">Interiors</a></li>
-								<li><a class="dropdown-item" href="#">Landscaping</a></li>
-								<li><a class="dropdown-item" href="#">Structures</a></li>
-							</ul>
+						<li class="nav-item">
+							<a class="nav-link text-dark" href="/archs">ARCHS</a>
 						</li>
 					</ul>
 				</div>
