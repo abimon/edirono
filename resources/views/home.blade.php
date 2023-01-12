@@ -52,77 +52,17 @@ $image7 = asset('storage/images/backgrounds/image7.jpg');
 		<div class="row nopadding">
 			<div class="col-md-6 padding-right">
 				<div class="row">
+					@foreach($projects as $project)
 					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image1}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
+						<a href="/projects/{{$project->title}}" class="portfolio-grid">
+							<img src="{{asset('storage/projects/'.$project->file_path)}}" class="img-responsive">
 							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
+								<h3>{{$project->title}} Project</h3>
+								<span>{{$project->project_location}}</span>
 							</div>
 						</a>
 					</div>
-					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image2}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image3}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
-							</div>
-						</a>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="col-md-6 padding-left">
-				<div class="row">
-					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image4}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image5}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image6}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
-							</div>
-						</a>
-					</div>
-
-					<div class="col-md-12 animate-box">
-						<a href="/single" class="portfolio-grid">
-							<img src="{{$image7}}" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co">
-							<div class="desc">
-								<h3>Dublin Arena Architect Project</h3>
-								<span>Building, Arena</span>
-							</div>
-						</a>
-					</div>
-
+					@endforeach
 				</div>
 			</div>
 		</div>

@@ -33,7 +33,7 @@ class dataController extends Controller
             'description' => request()->description,
             'file_path' => $file_path,
             'isOngoing' => request()->isOngoing,
-            'project_location' => request()->project_location,
+            'project_location' => request()->location,
         ]);
         return redirect()->back();
     }

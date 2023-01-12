@@ -21,15 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', function(){
-    return view('home');
-});
+Route::get('/', [viewsController::class, 'home']);
 Route::get('/single', function(){
     return view('single');
 });
 Route::get('/contact', function(){
     return view('contact');
 });
+
+Route::get('/projects/{name}', [viewsController::class, 'project']);
 
 Route::get('/calendar', [viewsController::class, 'calendar']);
 Route::get('/dashboard', [viewsController::class, 'dashboard']);

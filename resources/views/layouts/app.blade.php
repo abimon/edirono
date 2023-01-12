@@ -23,10 +23,10 @@
 		a {
 			text-decoration: none;
 		}
-		a:hover{
-			color:cyan;
-		}
 
+		a:hover {
+			color: cyan;
+		}
 	</style>
 </head>
 
@@ -34,7 +34,7 @@
 
 	<div class="fh5co-loader"></div>
 
-	<div >
+	<div>
 		<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
 			<div class="container">
 				<a class="navbar-brand" href="/"><img src="{{asset('storage/images/backgrounds/LogoRono.png')}}" width="60" height="60"></a>
@@ -61,33 +61,32 @@
 			</div>
 		</nav>
 		<div style="min-height:400px;">
-		@yield('content')
+			@yield('content')
 		</div>
 		<div class="container">
 			<footer id="fh5co-footer" role="contentinfo">
 				<div class="row">
-					<div class="col-md-4 fh5co-widget">
-						<h4>About Us</h4>
-						<p>We are a focused and client prioritized organization. To us your request is a command we but have to obey. Daily, we are determined to make the best out of our efforts and meet the client's utmost need</p>
-					</div>
+						<div class="col-md-4 fh5co-widget">
+							<h4>About Us</h4>
+							<p>We are a focused and client prioritized organization. To us your request is a command we but have to obey. Daily, we are determined to make the best out of our efforts and meet the client's utmost need</p>
+						</div>
+						<div class="col-md-4"></div>
+						<!--
 					<div class="col-md-4 col-md-push-1">
 						<h4>Latest Projects</h4>
 						<ul class="fh5co-footer-links">
 							<li><a href="#">JBC Stadium</a></li>
-							<li><a href="#">T-Mobile Arena</a></li>
-							<li><a href="#">Target Field</a></li>
-							<li><a href="#">London Stadium</a></li>
 						</ul>
 					</div>
-					<div class="col-md-4">
-						<h4>Contact Information</h4>
-						<ul class="fh5co-footer-links">
-							<li><i class="icon-whatsapp"></i> <a href="https://wa.me/+254715090098">+254 715 090 098</a></li>
-							<li><i class="icon-phone"></i> <a href="tel://+254715090098">+254 715 090 098</a></li>
-							<li><i class="icon-mail"></i> <a href="mailto:info@ronoarchsandknits.com">info@ronoarchsandknits.com</a></li>
-						</ul>
-					</div>
-
+					-->
+						<div class="col-md-4">
+							<h4>Contact Information</h4>
+							<ul class="fh5co-footer-links">
+								<li><i class="icon-whatsapp"></i> <a href="https://wa.me/+254715090098">+254 715 090 098</a></li>
+								<li><i class="icon-phone"></i> <a href="tel://+254715090098">+254 715 090 098</a></li>
+								<li><i class="icon-mail"></i> <a href="mailto:info@ronoarchsandknits.com">info@ronoarchsandknits.com</a></li>
+							</ul>
+						</div>
 				</div>
 
 				<div class="row copyright">

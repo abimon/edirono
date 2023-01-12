@@ -27,7 +27,7 @@
                         </a>
                     </div>
 
-                    <!-- #Total Page Views ==================== -->
+                    <!-- #Total Projects Views ==================== -->
                     <div class='col-md-3 col-6 p-2'>
                         <a href="/resources" class="card p-2">
                             <div class="layers bd bgc-white p-20">
@@ -40,7 +40,7 @@
                                             <span id="sparklinedash2"></span>
                                         </div>
                                         <div class="peer">
-                                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">15</span>
+                                            <span class="d-ib lh-0 va-m fw-600 bdrs-10em pX-15 pY-15 bgc-red-50 c-red-500">{{$projects->count()}}</span>
                                         </div>
                                     </div>
                                 </div>

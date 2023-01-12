@@ -27,4 +27,21 @@ class viewsController extends Controller
         ];
         return view('dashboard', $data);
     }
+    function home(){
+        $projects=Project::all();
+        $data=[
+            'projects'=>$projects,
+        ];
+        return view('home', $data);
+    }
+    function project($name){
+        $project=Project::where(['title'=>$name])->first();
+        $category=Category::where(['id'=>$project->category_id])->first();
+        $data=[
+            'project'=>$project,
+            'category'=>$category,
+        ];
+        //return $project;
+        return view('single', $data);
+    }
 }
