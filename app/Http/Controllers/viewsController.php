@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\File;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class viewsController extends Controller
@@ -63,5 +64,14 @@ class viewsController extends Controller
             'projects'=>$projects,
         ];
         return view('projects', $data);
+    }
+    function projects(){
+        $projects=Project::all();
+        $users=User::all();
+        $data=[
+            'projects'=>$projects,
+            'users'=>$users
+        ];
+        return response()->json($data);
     }
 }

@@ -10,7 +10,8 @@ class Project extends Model
     use HasFactory;
     protected $fillable = [
         'title',
-        'category_id',
+        'category',
+        'subcategory',
         'description',
         'file_path',
         'isOngoing',

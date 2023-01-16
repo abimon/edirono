@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Event;
 use App\Models\File;
 use App\Models\Project;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class dataController extends Controller
 {
@@ -26,18 +28,19 @@ class dataController extends Controller
         $filename = request()->title;
         //File name to store
         $file_path = $filename . '_' . time() . '.' . $extension;
-        //upload
-        request()->file('file')->storeAs('public/projects', $file_path);
         
         Project::create([
             'title' => request()->title,
             'category' => $category,
-            'subcategory'=>request()->subcategory,
+            'subcategory'=>request()->category_id,
             'description' => request()->description,
             'file_path' => $file_path,
             'isOngoing' => request()->isOngoing,
             'project_location' => request()->location,
         ]);
+        //upload
+        request()->file('file')->storeAs('public/projects', $file_path);
+        
         return redirect()->back();
     }
     public function addFiles(Request $req)
@@ -67,6 +70,14 @@ class dataController extends Controller
     {
         Event::destroy($id);
         return redirect()->back();
+    }
+    function reg_user(){
+        User::create([
+            'name' => request()->name,
+            'email' => request()->email,
+            'password' => Hash::make(request()->password),
+            'permissions'=>'Guest',
+        ]);
     }
     
 }

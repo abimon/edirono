@@ -44,7 +44,7 @@ Route::middleware('checkSession')->group(function(){
     
     //CRUD
     Route::post('/addCategory',[dataController::class, 'addCategory']);
-    Route::post('/addProject',[dataController::class, 'createproject']);
+    Route::post('/addProject/{category}',[dataController::class, 'createproject']);
     Route::post('/addFiles',[dataController::class, 'addFiles']);
     Route::post('/createEvent',[dataController::class, 'createEvent']);
 });
