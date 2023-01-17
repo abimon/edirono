@@ -72,13 +72,13 @@ class dataController extends Controller
         return redirect()->back();
     }
     function reg_user(){
-        $user=User::create([
-            'name' => request()->post('name'),
-            'email' => request()->post('email'),
-            'password' => Hash::make(request()->post('password')),
-            'permissions'=>'Guest',
-        ]);
-        if($user){
+        $user = new User();
+        $user->name = request()->post('name');
+        $user->email = request()->post('email');
+        $user->password = Hash::make(request()->post('password'));
+        $user->permissions = 'Guest';
+        
+        if($user->save()){
             return response()->json([
                 'success'=>true,
             ]);
