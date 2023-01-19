@@ -71,11 +71,11 @@ class dataController extends Controller
         Event::destroy($id);
         return redirect()->back();
     }
-    function reg_user(){
+    function reg_user(Request $req){
         $user = new User();
-        $user->name = request()->post('name');
-        $user->email = request()->post('email');
-        $user->password = Hash::make(request()->post('password'));
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
         $user->permissions = 'Guest';
         
         if($user->save()){
