@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/projects', [viewsController::class, 'projects']);
-Route::post('/reg_user', [viewsController::class, 'reg_user']);
+Route::post('/reg_user', [dataController::class, 'reg_user']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
