@@ -92,5 +92,23 @@ class dataController extends Controller
 
         );
     }
-    
+    function deleteUser($id){
+        User::destroy($id);
+        return redirect()->back();
+    }
+    function deleteProject($id){
+        Project::destroy($id);
+        File::where(['project_id',$id])->delete();
+        return redirect()->back();
+    }
+    function editProject($id){
+        $project=Project::where(['id',$id])->first();
+        $project->title = request()->title;
+        $project->subcategory=request()->category_id;
+        $project->description = request()->description;
+        $project->isOngoing = request()->isOngoing;
+        $project->project_location = request()->location;
+        $project->update();
+        return redirect()->back();
+    }
 }

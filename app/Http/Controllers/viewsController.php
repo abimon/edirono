@@ -25,10 +25,11 @@ class viewsController extends Controller
     public function dashboard(){
         $projects=Project::all();
         $categories= Category::orderBy('subcategory','desc')->get();
-        
+        $user=User::all();
         $data=[
             'projects'=>$projects,
-            'categories'=>$categories
+            'categories'=>$categories,
+            'users'=>$user,
         ];
         return view('dashboard', $data);
     }
