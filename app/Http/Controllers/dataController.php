@@ -39,7 +39,7 @@ class dataController extends Controller
             'project_location' => request()->location,
         ]);
         //upload
-        request()->file('file')->storeAs('public/projects', $file_path);
+        request()->file('file')->storeAs('storage/projects', $file_path);
         
         return redirect()->back();
     }
