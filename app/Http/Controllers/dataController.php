@@ -39,7 +39,7 @@ class dataController extends Controller
             'project_location' => request()->location,
         ]);
         //upload
-        request()->file('file')->storeAs('storage/projects', $file_path);
+        request()->file('file')->storeAs('public/projects', $file_path);
         
         return redirect()->back();
     }
@@ -47,7 +47,7 @@ class dataController extends Controller
     {
         foreach ($req->file('files') as $file) {
             $filename = $file->getClientOriginalName();
-            $file->move('storage/projects/others', $filename);;
+            $file->move('public/projects/others', $filename);;
             File::create([
                 'project_id' => request()->project_id,
                 'file_path' => $filename
