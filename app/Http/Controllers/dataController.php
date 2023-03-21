@@ -98,11 +98,11 @@ class dataController extends Controller
     }
     function deleteProject($id){
         Project::destroy($id);
-        File::where(['project_id',$id])->delete();
+        File::where(['project_id'=>$id])->delete();
         return redirect()->back();
     }
     function editProject($id){
-        $project=Project::where(['id',$id])->first();
+        $project=Project::where(['id'=>$id])->first();
         $project->title = request()->title;
         $project->subcategory=request()->category_id;
         $project->description = request()->description;
