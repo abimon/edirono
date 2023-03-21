@@ -46,7 +46,7 @@ Route::middleware('checkSession')->group(function(){
     Route::post('/addCategory',[dataController::class, 'addCategory']);
     Route::post('/addProject/{category}',[dataController::class, 'createproject']);
     Route::post('/editProject/{id}',[dataController::class, 'editProject']);
-    Route::post('/deleteProject/{id}',[dataController::class, 'deleteProject']);
+    Route::get('/deleteProject/{id}',[dataController::class, 'deleteProject']);
     Route::post('/addFiles',[dataController::class, 'addFiles']);
     Route::post('/createEvent',[dataController::class, 'createEvent']);
 });
